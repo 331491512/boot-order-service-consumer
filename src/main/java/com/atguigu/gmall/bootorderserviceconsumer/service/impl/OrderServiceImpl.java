@@ -1,9 +1,10 @@
-package com.atguigu.gmall.service.impl;
+package com.atguigu.gmall.bootorderserviceconsumer.service.impl;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.apache.dubbo.config.annotation.Reference;
+import org.apache.dubbo.config.annotation.Service;
+import org.springframework.stereotype.Component;
 
 import com.atguigu.gmall.bean.UserAddress;
 import com.atguigu.gmall.service.DetailService;
@@ -11,12 +12,13 @@ import com.atguigu.gmall.service.OrderService;
 import com.atguigu.gmall.service.UserService;
 
 @Service
+@Component
 public class OrderServiceImpl implements OrderService {
 
-    @Autowired
+    @Reference
     UserService userService;
 
-    @Autowired
+    @Reference
     DetailService detailService;
 
     public List<UserAddress> initOrder(String userId) {

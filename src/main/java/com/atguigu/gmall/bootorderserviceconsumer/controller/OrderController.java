@@ -1,4 +1,4 @@
-package com.atguigu.gmall.controller;
+package com.atguigu.gmall.bootorderserviceconsumer.controller;
 
 import java.util.List;
 
@@ -18,7 +18,14 @@ public class OrderController {
 
     @GetMapping("/initUserAddress")
     public List<UserAddress> initUserAddress(@RequestParam("userId") String userId) {
+        System.out.println("initUserAddress方法");
         List<UserAddress> initOrder = orderService.initOrder(userId);
         return initOrder;
+    }
+
+    @GetMapping("/hello")
+    public String hello() {
+        System.out.println("initUserAddress方法");
+        return "Hello SpringBoot Project.";
     }
 }

@@ -16,15 +16,27 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		
+		<!-- 解决springboot2.1.5和maven兼容问题 -->
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -37,12 +49,37 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-		<!-- Dubbo Spring Boot Starter -->
+		<!-- ***************************** -->
+		<!-- ** 注意：这里面所有的包都要包含** -->
+		<!-- ***************************** -->
+
+		<!-- 版本关系 -->
+		<!-- Dubbo Spring....Boot Dubbo....Spring Boot -->
+		<!-- 0.2.1.RELEASE...2.6.5+........2.x........ -->
+		<!-- 0.1.2.RELEASE...2.6.5+........1.x........ -->
+
 		<dependency>
 			<groupId>org.apache.dubbo</groupId>
 			<artifactId>dubbo-spring-boot-starter</artifactId>
 			<version>2.7.1</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.dubbo</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.7.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.dubbo</groupId>
+			<artifactId>dubbo-dependencies-zookeeper</artifactId>
+			<version>2.7.1</version>
+			<type>pom</type>
+		</dependency>
+
+		<!-- ********* -->
+		<!-- ** 结束 ** -->
+		<!-- ********* -->
 	</dependencies>
 
 	<build>
