@@ -3,7 +3,6 @@ package com.atguigu.gmall.bootorderserviceconsumer.service.impl;
 import java.util.List;
 
 import org.apache.dubbo.config.annotation.Reference;
-import org.apache.dubbo.config.annotation.Service;
 import org.springframework.stereotype.Component;
 
 import com.atguigu.gmall.bean.UserAddress;
@@ -11,11 +10,10 @@ import com.atguigu.gmall.service.DetailService;
 import com.atguigu.gmall.service.OrderService;
 import com.atguigu.gmall.service.UserService;
 
-@Service
 @Component
 public class OrderServiceImpl implements OrderService {
 
-    @Reference
+    @Reference // 获取暴露的服务
     UserService userService;
 
     @Reference
